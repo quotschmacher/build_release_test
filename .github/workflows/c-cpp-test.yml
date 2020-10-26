@@ -25,6 +25,7 @@ jobs:
     - name: testrun
       run: |
         ls
+        ls build
 #        ./hello
 
 #  build-cpp-windows-2019:
