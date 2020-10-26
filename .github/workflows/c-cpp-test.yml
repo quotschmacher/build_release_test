@@ -24,8 +24,9 @@ jobs:
         make
     - name: testrun
       run: |
-        ls
-        ls build
+        ./build/hello
+#        ls
+#        ls build
 #        ./hello
 
 #  build-cpp-windows-2019:
