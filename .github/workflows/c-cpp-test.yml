@@ -30,10 +30,10 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build/hello
-        asset_name: mything
+        asset_name: hello_world
         tag: ${{ github.ref }}
         overwrite: true
-        body: "This is my release text"
+        body: "Testrelease von Hello World mit CMake"
 #        ls
 #        ls build
 #        ./hello
