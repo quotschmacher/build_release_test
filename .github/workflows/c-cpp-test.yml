@@ -26,29 +26,29 @@ jobs:
       run: |
         chmod +x ./build/hello
         ./build/hello
-    - name: Bump version and push tag/create release point
-      uses: anothrNick/github-tag-action@1.33.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        WITH_V: true
-      id: bump_version
-    - name: Upload binaries to release
-      uses: svenstaro/upload-release-action@v2
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: build/hello
-        asset_name: hello_world
-        tag: ${{ steps.bump_version.outputs.new_tag }}
-        overwrite: true
-        body: "Testrelease von Hello World mit CMake"
-#        ls
-#        ls build
-#        ./hello
+#    - name: Bump version and push tag/create release point
+#      uses: anothrNick/github-tag-action@1.33.0
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        WITH_V: true
+#      id: bump_version
+#    - name: Upload binaries to release
+#      uses: svenstaro/upload-release-action@v2
+#      with:
+#        repo_token: ${{ secrets.GITHUB_TOKEN }}
+#        file: build/hello
+#        asset_name: hello_world
+#        tag: ${{ steps.bump_version.outputs.new_tag }}
+#        overwrite: true
+#        body: "Testrelease von Hello World mit CMake"
+
+
 
   build-cpp-windows-2019:
     name: C++/MSVS (windows-2019)
 
     runs-on: windows-2019
+    
 
     env:
       wxMSW_VER: 3.1.4
@@ -62,8 +62,8 @@ jobs:
           repository: wxWidgets/wxWidgets
           ref: v${{ env.wxMSW_VER }}
           path: ${{ env.WXWIN }}${{ env.wxMSW_VER }}
+      - uses: ilammy/msvc-dev-cmd@v1
       - name: start building wx widgtes
-        shell: cmd
         run: |
           cd ${{ env.WXWIN }}${{ env.wxMSW_VER }}
           nmake /f makefile.vc BUILD=release TARGET_CPU=X86
