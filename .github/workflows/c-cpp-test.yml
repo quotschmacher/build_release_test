@@ -62,6 +62,7 @@ jobs:
           repository: wxWidgets/wxWidgets
           ref: v${{ env.wxMSW_VER }}
           path: ${{ env.WXWIN }}${{ env.wxMSW_VER }}
+          submodules: true
       - uses: ilammy/msvc-dev-cmd@v1
       - name: start building wx widgtes
         run: |
