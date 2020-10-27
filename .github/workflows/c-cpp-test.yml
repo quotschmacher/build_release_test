@@ -24,6 +24,7 @@ jobs:
         make
     - name: testrun
       run: |
+        chmod +x ./build/hello
         ./build/hello
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
