@@ -38,7 +38,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build/hello
         asset_name: hello_world
-          tag: ${{ steps.bump_version.outputs.new_tag }}
+        tag: ${{ steps.bump_version.outputs.new_tag }}
         overwrite: true
         body: "Testrelease von Hello World mit CMake"
 #        ls
