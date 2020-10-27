@@ -63,6 +63,7 @@ jobs:
           ref: v${{ env.wxMSW_VER }}
           path: ${{ env.WXWIN }}${{ env.wxMSW_VER }}
       - name: start building wx widgtes
+        shell: cmd
         run: |
           cd ${{ env.WXWIN }}${{ env.wxMSW_VER }}
           nmake /f makefile.vc BUILD=release TARGET_CPU=X86
