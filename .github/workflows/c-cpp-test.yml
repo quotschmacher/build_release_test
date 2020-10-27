@@ -26,13 +26,19 @@ jobs:
       run: |
         chmod +x ./build/hello
         ./build/hello
+    - name: Bump version and push tag/create release point
+        uses: anothrNick/github-tag-action@1.17.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+        id: bump_version
     - name: Upload binaries to release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: build/hello
         asset_name: hello_world
-        tag: ${{ github.ref }}
+          tag: ${{ steps.bump_version.outputs.new_tag }}
         overwrite: true
         body: "Testrelease von Hello World mit CMake"
 #        ls
