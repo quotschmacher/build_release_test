@@ -65,7 +65,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
       - name: start building wx widgtes
         run: |
-          cd ${{ env.WXWIN }}${{ env.wxMSW_VER }}
+          cd ${{ env.WXWIN }}${{ env.wxMSW_VER }}\build\msw
           nmake /f makefile.vc BUILD=release TARGET_CPU=X86
 
 #      - name: Install wxWidgets
