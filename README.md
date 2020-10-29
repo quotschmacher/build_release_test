@@ -6,3 +6,8 @@
 
 - https://mateuscosta.me/rust-releases-with-github-actions release mit versionsnummer
   - https://github.com/anothrNick/github-tag-action/blob/master/README.md doku zu versionsnummern
+  
+:heavy_check_mark
+:white_check:mark
+:question:
+:question_mark
