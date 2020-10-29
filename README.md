@@ -11,3 +11,7 @@
 :white_check:mark
 :question:
 :question_mark
+
+- [:question:]
+- [ ]
+- [x]
