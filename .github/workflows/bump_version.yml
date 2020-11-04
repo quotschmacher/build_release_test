@@ -25,11 +25,11 @@ jobs:
         INITIAL_VERSION: 2.0.3
         VERBOSE: true
       id: bump_version
-    - name: Repository dispatch tag created event
-      uses: peter-evans/repository-dispatch@v1
-      with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        event-type: tag-created
-        client-payload: '{"new_version": "${{ steps.bump_version.outputs.new_tag }}"}'
+#    - name: Repository dispatch tag created event
+#      uses: peter-evans/repository-dispatch@v1
+#      with:
+#        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+#        event-type: tag-created
+#        client-payload: '{"new_version": "${{ steps.bump_version.outputs.new_tag }}"}'
 
 # wichtig: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
