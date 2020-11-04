@@ -21,5 +21,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
         DEFAULT_BUMP: none
-#        INITIAL_VERSION: 2.0.3
+        RELEASE_BRANCHES: main,master  
+        INITIAL_VERSION: 2.0.3
       id: bump_version
