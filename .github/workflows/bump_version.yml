@@ -25,6 +25,14 @@ jobs:
         INITIAL_VERSION: 2.0.3
         VERBOSE: true
       id: bump_version
+      
+  BuildTargets:
+    needs: CreateNewTag
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
     - name: Hello World
       uses: actions/hello-world-javascript-action@main
       with:
