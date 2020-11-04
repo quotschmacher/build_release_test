@@ -25,6 +25,8 @@ jobs:
         INITIAL_VERSION: 2.0.3
         VERBOSE: true
       id: bump_version
+    outputs:
+      new_version: ${{ steps.bump_version.outputs.new_tag }}
       
   BuildTargets:
     needs: CreateNewTag
@@ -36,7 +38,7 @@ jobs:
     - name: Hello World
       uses: actions/hello-world-javascript-action@main
       with:
-        who-to-greet: ${{ steps.bump_version.outputs.new_tag }}
+        who-to-greet: ${{ needs.CreateNewTag.outputs.new_version }}
 #    - name: Repository dispatch tag created event
 #      uses: peter-evans/repository-dispatch@v1
 #      with:
