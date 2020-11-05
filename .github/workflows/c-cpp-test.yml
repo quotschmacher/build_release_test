@@ -61,7 +61,7 @@ jobs:
           echo %CD%
           mkdir build
           ls
-          cd %CD%\build
+          cd (Get-Location).Path\build
           ls
 #      - name: checkout wxWin
 #        uses: actions/checkout@v2
