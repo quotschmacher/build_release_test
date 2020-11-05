@@ -58,11 +58,16 @@ jobs:
     steps:
       - name: path test
         run: |
-          ls ~
+          ls
+          cd ${{ github.workspace }}
+          ls
           mkdir build
+          ls
+          cd ${{ github.workspace }}\build
           ls
           cd ~
           ls
+          cd ${{ github.workspace }}\build
 #      - name: checkout wxWin
 #        uses: actions/checkout@v2
 #        with:
