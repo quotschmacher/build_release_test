@@ -56,18 +56,25 @@ jobs:
 #      WXWIN: c:\wxWidgets-
 
     steps:
-      - name: checkout wxWin
-        uses: actions/checkout@v2
-        with:
-          repository: wxWidgets/wxWidgets
-          ref: v${{ env.wxMSW_VER }}
-          path: ${{ env.WXWIN }}${{ env.wxMSW_VER }}
-          submodules: true
-      - uses: ilammy/msvc-dev-cmd@v1
-      - name: start building wx widgtes
+      - name: path test
         run: |
-          cd ${{ env.WXWIN }}${{ env.wxMSW_VER }}\build\msw
-          nmake /f makefile.vc BUILD=release TARGET_CPU=X86
+          echo %CD%
+          mkdir build
+          ls
+          cd %CD%\build
+          ls
+#      - name: checkout wxWin
+#        uses: actions/checkout@v2
+#        with:
+#          repository: wxWidgets/wxWidgets
+#          ref: v${{ env.wxMSW_VER }}
+#          path: ${{ env.WXWIN }}${{ env.wxMSW_VER }}
+#          submodules: true
+#      - uses: ilammy/msvc-dev-cmd@v1
+#      - name: start building wx widgtes
+#        run: |
+#          cd ${{ env.WXWIN }}${{ env.wxMSW_VER }}\build\msw
+#          nmake /f makefile.vc BUILD=release TARGET_CPU=X86
 
 #      - name: Install wxWidgets
 #        run: |
