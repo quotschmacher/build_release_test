@@ -58,10 +58,10 @@ jobs:
     steps:
       - name: path test
         run: |
-          echo %CD%
+          ls ~
           mkdir build
           ls
-          cd (Get-Location).Path\build
+          cd ~
           ls
 #      - name: checkout wxWin
 #        uses: actions/checkout@v2
